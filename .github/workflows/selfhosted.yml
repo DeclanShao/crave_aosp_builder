@@ -22,6 +22,7 @@ on:
           - 'DerpFest 13.0'
           - 'CipherOS 14'
           - 'PixelOS 14'
+          - 'PixelOS 13'
           - 'LineageOS 18.1'
           - 'LineageOS 16.0'
           - 'CyanogenMOD 14.1'
@@ -148,6 +149,11 @@ jobs:
           export PROJECTFOLDER="/crave-devspaces/Pixel14"
           export PROJECTID="82"
           export REPO_INIT="repo init -u https://github.com/PixelOS-AOSP/manifest.git -b fourteen --git-lfs --depth=1"
+        ;;
+        "PixelOS 13")
+          export PROJECTFOLDER="/crave-devspaces/Pixel13"
+          export PROJECTID="84"
+          export REPO_INIT="repo init -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen --depth=1"
         ;;
         "LineageOS 18.1")
           export PROJECTFOLDER="/crave-devspaces/Lineage18"
