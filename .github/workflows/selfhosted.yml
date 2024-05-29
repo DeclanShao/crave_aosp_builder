@@ -393,6 +393,9 @@ jobs:
         
         # Sync the repositories
         /opt/crave/resync.sh  && \
+
+        # git-lfs
+        repo forall -c "git lfs install && git lfs pull && git lfs checkout" && \
         
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
