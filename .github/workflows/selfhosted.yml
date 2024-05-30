@@ -393,9 +393,6 @@ jobs:
         
         # Sync the repositories
         /opt/crave/resync.sh  && \
-
-        # git-lfs
-        repo forall -c "git lfs install && git lfs pull && git lfs checkout" && \
         
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
@@ -405,6 +402,8 @@ jobs:
         echo "Repository: ${{ github.repository }}"; \
         echo "Run ID: ${{ github.run_id }}"; \
 
+        repo forall -c 'git lfs install && git lfs pull && git lfs checkout' ; \
+        
         # Build the ROM
         lunch ${{ github.event.inputs.PRODUCT_NAME }}-${{ github.event.inputs.BUILD_TYPE }} && \
         make installclean && \
